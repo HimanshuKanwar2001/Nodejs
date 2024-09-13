@@ -9,8 +9,22 @@ const http=require('http');
 
 //2.create server
 const server=http.createServer((req,res) =>{
+    console.log(req.url);
+    res.write("Welcome to my application ");
+    if(req.url =="/product"){
+        //response ends
+        return res.end("This is Porduct Page");
+    }
+    else if(req.url =="/user"){
+
+        return res.end("This is a User Server");
+    }
+    //logging.
+
+
     //Here comes the request.
-    res.end("Welcome to node js server");
+    //modifying the response.
+    return res.end("Welcome to node js server");
 
 });
 
