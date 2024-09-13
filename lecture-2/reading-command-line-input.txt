@@ -1,0 +1,5 @@
+-we printed message and result on terminal using console.log
+how to read console??
+
+
+readline- a nodejs core module to read inputs from terminal
