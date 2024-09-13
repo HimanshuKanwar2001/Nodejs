@@ -1,0 +1,20 @@
+Types of Moudle
+
+ Internal Moudle or Userdefine Module
+
+build in module or nodejs module 
+
+external Module  or Third party module
+
+
+
+Package Manager
+
+
+default package manager :(Unoffical)   NPM(Node package manager)  / Yarn Package manager 
+
+roles
+1 Installation of packages
+2 version management
+3 managing dependencies
+4 Publising packages
