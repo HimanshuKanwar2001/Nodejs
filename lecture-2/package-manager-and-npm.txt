@@ -45,15 +45,25 @@ Packet.json
 
 
 
+Node Version Control
+Installation in windows 
+go to Github  :: https://github.com/coreybutler/nvm-windows/releases
 
- install nvm
+ Basic NVM Commands
 
- nvm install (version)
+Once you have installed NVM, you can use the following commands to manage your
 
- nvm use (version in numbers format)
+Node.js installations:
 
- nvm -v (to check the version)
+● To list all the available Node.js versions:
 
- nvm alais default (version number)
+nvm ls-remote
 
- nvm ls (to check which version are install)
+● To install a specific Node.js version:
+nvm install <version>
+
+● To switch to a different Node.js version:
+nvm use <version>
+
+● To set a default Node.js version to use in new shells:
+nvm alias default <version>
