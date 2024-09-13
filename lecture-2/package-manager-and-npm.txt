@@ -18,3 +18,9 @@ roles
 2 version management
 3 managing dependencies
 4 Publising packages
+
+
+
+
+
+npm i -g  nodemon
