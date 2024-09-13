@@ -26,6 +26,8 @@ roles
 npm i -g  nodemon
 
 
+for dev dependencies Installation
+npm i -D nodemon 
 
 
 Packet.json

@@ -8,7 +8,7 @@
 // const result=arthmeticModule.sum(23,34);
 // console.log(result);
 
-import {sum,num} from "./arithmetics.mjs" ;
+import {sum,num} from "./arithmetics.js" ;
 // import * as arthmeticModule from "./arithmetics.mjs" ;
 
 // console.log(arthmeticModule.sum(3,5));
