@@ -1,0 +1,32 @@
+Express-A web Framework
+
+
+-modern
+-high
+-Performance
+-scalable
+
+
+
+1.MVC-separation of concerns
+
+user->controller->model->view->user....
+
+model-present the data
+controller-handle the request
+view-present the html page
+
+2.REST-Cross Platform Support
+representational state transfer protocol
+
+Desktop Client--------------------REST SERVER
+Mobile Client--------------------REST SERVER
+
+
+
+3.Microservices-Highly Scalable Architecture
+Distributing the application into multiple server so that they can server more and more clients
+
+Mobile app- REST API----------Account services-ACCOUNT DB
+Mobile app- REST API----------Inventory services-INVENTORY DB
+Deskop app- REST API----------Shipping services-SHIPPING DB
