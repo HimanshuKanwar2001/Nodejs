@@ -30,3 +30,23 @@ Distributing the application into multiple server so that they can server more a
 Mobile app- REST API----------Account services-ACCOUNT DB
 Mobile app- REST API----------Inventory services-INVENTORY DB
 Deskop app- REST API----------Shipping services-SHIPPING DB
+
+
+
+
+MODEL
+-Represents Data
+-Represtns Business Logic
+
+
+Views
+-User Interface
+-Display Data
+
+
+Controller
+-Handles Requests
+-Updates model
+-Send responses
+
+
