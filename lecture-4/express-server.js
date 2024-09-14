@@ -24,12 +24,13 @@ server.use(globalMiddleware);
 //GET REQUEST
 //route-level middleware
 server.get("/",[firstMiddleware,secondMiddleware], (req, res) => {
+    res.set("Content-type",'text/plain')
   res.send("Welcome to Express Server");
 });
 
 //POST REQUEST
 server.post('/',(req,res)=>{
-    res.send("Post request receieved");
+    res.status(201).send("Post request receieved");
 })
 
 //PUT REQUEST
