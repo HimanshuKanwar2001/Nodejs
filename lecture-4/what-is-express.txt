@@ -1,0 +1,13 @@
+what problems does express solve?
+
+Routing  eg: Employee and Employee/:id for get and post
+Middleware
+TemplateEngine
+
+
+Advantage of express
+
+Easy to Learn
+High Performance
+TemplateEngine(Dynamic Content)
+
