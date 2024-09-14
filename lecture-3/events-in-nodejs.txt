@@ -1,0 +1,16 @@
+what are events?
+1. a click of button
+2. a change in data
+3. a change in file
+
+eg. update DB ,feed update,Timeline
+
+THE DATA WE RECEIVES FROM THE CLIENT IS IN FORM OF MULTIPLE CHUNKS WE DO NOT RECEIVES ALL AT ONCE
+
+
+Nodejs built-in events
+"data": Triggered when a readable stream receives new data
+"error": Fired when an error occurs in the applications
+"listening": Emitted when a server starts listening for incoming connections.
+
+using events to read data on post request
