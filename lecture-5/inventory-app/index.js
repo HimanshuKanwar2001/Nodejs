@@ -1,13 +1,18 @@
-const express=require("express");
+import express from 'express';
+import ProductController from './src/controllers/product.controller.js';
 
 
 const server=express();
 
 
+//create an instance of ProductController
+const productController=new ProductController();
+
+
+server.get('/',productController.getProduct);
 server.get('/',(req,res)=>{
     return res.send("Welcome to Inventory App");
 })
-
 
 
 
