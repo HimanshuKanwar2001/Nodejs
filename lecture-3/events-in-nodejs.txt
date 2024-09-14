@@ -14,3 +14,10 @@ Nodejs built-in events
 "listening": Emitted when a server starts listening for incoming connections.
 
 using events to read data on post request
+
+
+Advantages of Event-Driven Architecture
+
+1. Scalability
+2. Loose coupling(creating different features in different files to make it scalable in future, when the modules dont know about each other and still work with each other)
+3. Better Responsiveness
