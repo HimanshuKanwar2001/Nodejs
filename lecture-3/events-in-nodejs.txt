@@ -21,3 +21,16 @@ Advantages of Event-Driven Architecture
 1. Scalability
 2. Loose coupling(creating different features in different files to make it scalable in future, when the modules dont know about each other and still work with each other)
 3. Better Responsiveness
+
+
+Best Practices
+
+1.Modularize your code:
+2.User descritive naming conventions
+3.Keep module responsibilites clear(SOC/SRP)
+3.Use version control like git
+
+
+
+
+SINGLE RESPONSIBILITIES PRINCIPLE
