@@ -1,0 +1,15 @@
+http is a protocol
+
+http requrest methods
+
+GET-only retrieve data
+POST-submits a data to the server
+PUT-replace/update record
+DELETE- delte some resource
+
+
+CRUD operations
+Create-POST request
+Read-GET request
+Update-put request
+Delete-DELETE request

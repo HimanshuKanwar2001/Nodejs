@@ -21,11 +21,27 @@ function globalMiddleware(req,res,next){
 //this is going to be executed for all requests
 server.use(globalMiddleware);
 
-
+//GET REQUEST
 //route-level middleware
-server.get("/send",[firstMiddleware,secondMiddleware], (req, res) => {
+server.get("/",[firstMiddleware,secondMiddleware], (req, res) => {
   res.send("Welcome to Express Server");
 });
+
+//POST REQUEST
+server.post('/',(req,res)=>{
+    res.send("Post request receieved");
+})
+
+//PUT REQUEST
+server.put('/',(req,res)=>{
+    res.send("PUT request received");
+})
+
+//DELETE REQUEST
+server.delete('/',(req,res)=>{
+    res.send("DELETE request receieved");
+})
+
 
 //Listen to specified port.
 server.listen(3200, (err) => {
