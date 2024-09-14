@@ -1,7 +1,17 @@
 import fs from "fs";
+import path from "path";
 
 
 // const fs=require('fs');
+// const path =require('path');
+
+const filePath=path.join("src","home","data.txt");
+const filePathResolved=path.resolve("src","home","data.txt");
+
+console.log("filePath  :",filePath); //output : src\home\data.txt
+console.log("filePathResolved   :",filePathResolved); // output  : E:\Fullstack developer\Node js\new-files\learn\lecture-2\src\home\data.txt
+
+console.log(path.extname(filePathResolved)); //extension name eg. .txt
 
 
 
@@ -37,10 +47,10 @@ import fs from "fs";
 //     }
 // })
 
-fs.unlink("employee.txt",(err)=>{
-    if(err) console.log("Error");
-    else console.log("File has been deleted");
-})
+// fs.unlink("employee.txt",(err)=>{
+//     if(err) console.log("Error");
+//     else console.log("File has been deleted");
+// })
 
 console.log("this is another operation");
 
