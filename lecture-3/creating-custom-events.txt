@@ -1,0 +1,6 @@
+how Event-Driven Apps work?
+
+user creates a Post-
+ 1 Save to Databse(Event Listener)
+ 2 Send Notifications(Event Listener) 
+ 3 Updates Timeline(Event Listener)
