@@ -1,0 +1,31 @@
+why debugging ?
+
+
+1 understand why our code isn't wokring as expected.
+2 improve the quality and reliability of our applicatiopns .
+3 learn from our mistakes and become better developers.
+
+
+
+ ALL THE COMMANDS MENTIONS BELOW HAS TO BE WRITTEN IN THE TERMINAL TO GET THE FOLLOWING OUT MENTION BELOW RESPECTIVELY
+
+///////how to start debugger in node js 
+node inspect "full file name with extension";
+eg. node inspect product.js
+
+
+////how to set debugger to a line 
+setBreakpoint("product.js",4);   // the "4" mention here is the line number on which you have to put the debugger
+
+///to check for a particular variable about what value it stores
+watch("product")  // the product mention here is the variable on the line number 4 which we mention before 
+
+
+///now to continue the debugger to the next step we use 
+ cont   
+
+ 
+how debugging in Node.js is different than in javascript?
+1 environment
+2 Debugging tools
+3 Access to server-side resources
