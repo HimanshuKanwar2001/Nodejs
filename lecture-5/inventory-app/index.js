@@ -2,6 +2,7 @@ import express from 'express';
 import ProductController from './src/controllers/product.controller.js';
 import path from 'path';
 import expressEjsLayouts from 'express-ejs-layouts';
+import addProductValidationMiddleware from './src/middleware/validation.middleware.js';
 
 const server=express();
 
@@ -25,7 +26,7 @@ const productController=new ProductController();
 
 server.get('/',productController.getProduct);
 server.get('/new',productController.getAddForm);
-server.post('/add',productController.postAddProduct);
+server.post('/add',addProductValidationMiddleware,productController.postAddProduct);
 
 server.get('/',(req,res)=>{
     return res.send("Welcome to Inventory App");
