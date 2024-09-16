@@ -4,8 +4,8 @@ import ProductModel from "../models/product.model.js";
 export default class ProductController {
   getProduct(req, res) {
     let products = ProductModel.get();
-    console.log(products);
-    console.log(path.resolve());
+    // console.log(products);
+    // console.log(path.resolve());
 
     res.render("index", { products: products });
 
