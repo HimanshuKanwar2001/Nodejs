@@ -17,9 +17,9 @@ export default class ProductController {
   }
 
   addNewProduct(req, res) {
-    console.log(req.body);
+    console.log(req.body); //undefined
     //access data from form
-    let products = ProductModel.get();
-    res.render("products", { products: products });
+    ProductModel.add(req.body);
+    res.redirect('/');
   }
 }

@@ -5,6 +5,14 @@ import expressEjsLayouts from 'express-ejs-layouts';
 
 const server=express();
 
+//Static server file from the src/views directory
+server.use(express.static(path.join(path.resolve(),"src","views")));
+
+//parse form data
+server.use(express.urlencoded({
+    extended:true
+})); 
+
 //setup view engine settings
 server.set("view engine","ejs");
 server.set("views",path.join(path.resolve(),"src","views"))
@@ -17,7 +25,7 @@ const productController=new ProductController();
 
 server.get('/',productController.getProduct);
 server.get('/new',productController.getAddForm);
-server.post('/',productController.addNewProduct);
+server.post('/add',productController.addNewProduct);
 
 server.get('/',(req,res)=>{
     return res.send("Welcome to Inventory App");
