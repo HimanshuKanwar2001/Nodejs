@@ -10,6 +10,9 @@ export default class ProductModel {
   static get() {
     return products;
   }
+  static getById(id){
+    return products.find(p=>p.id==id);
+  }
 
   static add(productObj) {
     let newProduct = new ProductModel(

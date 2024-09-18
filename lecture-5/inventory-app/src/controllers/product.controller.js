@@ -21,6 +21,21 @@ export default class ProductController {
  
     //access data from form
     ProductModel.add(req.body);
-    res.redirect("/");
+    var products=ProductModel.getAll();
+    res.render('index',{products});
+    // res.redirect("/");
+  }
+  getUpdateProductView(req,res,next){
+    //1.if product exists then return view\
+    const {id}=req.body;
+    const productFound=Product.getById(id);
+    if(productFound){
+      return res.render("update-product",{product:productFound,errorMessage:null});
+    }
+    else{
+      return res.status(401).send("Product not found");
+    }
+
+    //2.else return errors
   }
 }
