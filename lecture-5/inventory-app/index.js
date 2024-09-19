@@ -26,8 +26,11 @@ const productController=new ProductController();
 
 server.get('/',productController.getProduct);
 server.get('/new',productController.getAddForm);
+server.get("/update-product/:id",productController.getUpdateProductView);
+
+
 server.post('/add',addProductValidationMiddleware,productController.postAddProduct);
-server.get("/update-product",productController.getUpdateProductView);
+server.post('/update-product',productController.postUpdateProduct);
 
 server.get('/',(req,res)=>{
     return res.send("Welcome to Inventory App");
