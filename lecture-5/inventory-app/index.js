@@ -8,6 +8,7 @@ const server=express();
 
 //Static server file from the src/views directory
 server.use(express.static(path.join(path.resolve(),"src","views")));
+server.use(express.static(path.join(path.resolve(),"public")));
 
 //parse form data
 server.use(express.urlencoded({
@@ -27,11 +28,11 @@ const productController=new ProductController();
 server.get('/',productController.getProduct);
 server.get('/new',productController.getAddForm);
 server.get("/update-product/:id",productController.getUpdateProductView);
-server.get('/delete-product/:id',productController.deleteProduct);
 
 
 server.post('/add',addProductValidationMiddleware,productController.postAddProduct);
 server.post('/update-product',productController.postUpdateProduct);
+server.post('/delete-product/:id',productController.deleteProduct);
 
 server.get('/',(req,res)=>{
     return res.send("Welcome to Inventory App");

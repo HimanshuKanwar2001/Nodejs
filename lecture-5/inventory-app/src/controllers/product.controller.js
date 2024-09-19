@@ -53,7 +53,7 @@ export default class ProductController {
 
   deleteProduct(req,res){
     const id=req.params.id;
-    console.log("ID IDHAR HAI BHAI",id)
+    // console.log("ID IDHAR HAI BHAI",id)
     const productFound = ProductModel.getById(id);
     
     if (!productFound) {
