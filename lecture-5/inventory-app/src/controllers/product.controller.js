@@ -21,7 +21,7 @@ export default class ProductController {
 
     //access data from form
     ProductModel.add(req.body);
-    var products = ProductModel.getAll();
+    let products = ProductModel.get();
     res.render("index", { products });
     // res.redirect("/");
   }
@@ -47,7 +47,24 @@ export default class ProductController {
 
   postUpdateProduct(req,res){
     ProductModel.update(req.body);
-    var products = ProductModel.get();
+    let products = ProductModel.get();
     res.render("index", { products });
+  }
+
+  deleteProduct(req,res){
+    const id=req.params.id;
+    console.log("ID IDHAR HAI BHAI",id)
+    const productFound = ProductModel.getById(id);
+    
+    if (!productFound) {
+      return res.status(401).send("Product not found");
+    } 
+
+
+    ProductModel.delete(id);
+    let products = ProductModel.get();
+    res.render("index", { products });
+
+    
   }
 }

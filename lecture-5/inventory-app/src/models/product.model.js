@@ -31,6 +31,11 @@ export default class ProductModel {
 
     products.push(newProduct);
   }
+  static delete(id){
+    const index =products.findIndex(p=>p.id==id);
+
+    products.splice(index,1);
+  }
 }
 
 var products = [
