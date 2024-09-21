@@ -18,9 +18,10 @@ export default class ProductController {
 
   postAddProduct(req, res, next) {
     // console.log(req.body);
-
+    const {name,desc,price}=req.body;
+    const imageUrl="/images/"+req.file.filename;
     //access data from form
-    ProductModel.add(req.body);
+    ProductModel.add(name,desc,price,imageUrl);
     let products = ProductModel.get();
     res.render("index", { products });
     // res.redirect("/");
