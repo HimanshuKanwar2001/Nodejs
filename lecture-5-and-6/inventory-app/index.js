@@ -6,39 +6,44 @@ import expressEjsLayouts from 'express-ejs-layouts';
 import addProductValidationMiddleware from './src/middleware/validation.middleware.js';
 import { uploadFile } from './src/middleware/file-upload.middleware.js';
 
-const server=express();
+
+const app=express();
 
 //Static server file from the src/views directory
-server.use(express.static(path.join(path.resolve(),"src","views")));
-server.use(express.static(path.join(path.resolve(),"public")));
+app.use(express.static(path.join(path.resolve(),"src","views")));
+app.use(express.static(path.join(path.resolve(),"public")));
+
 
 //parse form data
-server.use(express.urlencoded({
+app.use(express.urlencoded({
     extended:true
 })); 
 
 //setup view engine settings
-server.set("view engine","ejs");
-server.set("views",path.join(path.resolve(),"src","views"))
-server.use(expressEjsLayouts);
+app.set("view engine","ejs");
+app.set("views",path.join(path.resolve(),"src","views"))
+app.use(expressEjsLayouts);
 
 
 //create an instance of ProductController
 const productController=new ProductController();
-const usersCOntroller=new UserController();
+const usersController=new UserController();
 
 
-server.get('/register',usersCOntroller.getRegister);
-server.get('/',productController.getProduct);
-server.get('/new',productController.getAddForm);
-server.get("/update-product/:id",productController.getUpdateProductView);
+app.get('/register',usersController.getRegister);
+app.get('/login',usersController.getLogin);
+app.get('/',productController.getProduct);
+app.get('/new',productController.getAddForm);
+app.get("/update-product/:id",productController.getUpdateProductView);
 
 
-server.post('/add',uploadFile.single('imageUrl'),addProductValidationMiddleware,productController.postAddProduct);
-server.post('/update-product',productController.postUpdateProduct);
-server.post('/delete-product/:id',productController.deleteProduct);
+app.post('/register',usersController.postRegister);
+app.post('/login',usersController.postLogin);
+app.post('/add',uploadFile.single('imageUrl'),addProductValidationMiddleware,productController.postAddProduct);
+app.post('/update-product',productController.postUpdateProduct);
+app.post('/delete-product/:id',productController.deleteProduct);
 
-server.get('/',(req,res)=>{
+app.get('/',(req,res)=>{
     return res.send("Welcome to Inventory App");
 })
 
@@ -46,7 +51,7 @@ server.get('/',(req,res)=>{
 
 
 
-server.listen(3100,(err)=>{
+app.listen(3100,(err)=>{
     if(err){
         console.log("ERROR:",err);
     }
