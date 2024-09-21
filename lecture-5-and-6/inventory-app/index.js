@@ -16,7 +16,7 @@ const app = express();
 app.use(express.static(path.join(path.resolve(), "src", "views")));
 app.use(express.static(path.join(path.resolve(), "public")));
 app.use(cookieParser());
-app.use(setLastVisit);
+// app.use(setLastVisit);
 app.use(
   session({
     secret: "SecretKey",
@@ -46,7 +46,7 @@ const usersController = new UserController();
 
 app.get("/register", usersController.getRegister);
 app.get("/login", usersController.getLogin);
-app.get("/", auth, productController.getProduct);
+app.get("/", auth,setLastVisit, productController.getProduct);
 app.get("/new", auth, productController.getAddForm);
 app.get("/update-product/:id", auth, productController.getUpdateProductView);
 app.get('/logout',usersController.logout);
