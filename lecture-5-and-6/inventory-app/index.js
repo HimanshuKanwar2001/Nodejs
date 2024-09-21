@@ -1,5 +1,6 @@
 import express from 'express';
 import ProductController from './src/controllers/product.controller.js';
+import UserController from './src/controllers/user.controller.js';
 import path from 'path';
 import expressEjsLayouts from 'express-ejs-layouts';
 import addProductValidationMiddleware from './src/middleware/validation.middleware.js';
@@ -24,8 +25,10 @@ server.use(expressEjsLayouts);
 
 //create an instance of ProductController
 const productController=new ProductController();
+const usersCOntroller=new UserController();
 
 
+server.get('/register',usersCOntroller.getRegister);
 server.get('/',productController.getProduct);
 server.get('/new',productController.getAddForm);
 server.get("/update-product/:id",productController.getUpdateProductView);
