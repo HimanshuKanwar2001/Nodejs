@@ -7,13 +7,13 @@ export default class ProductController {
     // console.log(products);
     // console.log(path.resolve());
 
-    res.render("index", { products: products });
+    res.render("index", { products: products ,userEmail:req.session.userEmail});
 
     // return res.sendFile(path.join(path.resolve(),"src","views",'products.html'))
   }
 
   getAddForm(req, res) {
-    return res.render("new-product", { errorMessage: null });
+    return res.render("new-product", { errorMessage: null ,userEmail:req.session.userEmail });
   }
 
   postAddProduct(req, res, next) {
@@ -23,7 +23,7 @@ export default class ProductController {
     //access data from form
     ProductModel.add(name,desc,price,imageUrl);
     let products = ProductModel.get();
-    res.render("index", { products });
+    res.render("index", { products ,userEmail:req.session.userEmail});
     // res.redirect("/");
   }
 
@@ -36,7 +36,7 @@ export default class ProductController {
     if (productFound) {
       return res.render("update-product", {
         product: productFound,
-        errorMessage: null,
+        errorMessage: null,userEmail:req.session.userEmail
       });
     } 
     //2.else return errors
