@@ -7,12 +7,16 @@ import addProductValidationMiddleware from "./src/middleware/validation.middlewa
 import { uploadFile } from "./src/middleware/file-upload.middleware.js";
 import session from "express-session";
 import {auth} from "./src/middleware/auth.middleware.js"
+import cookieParser from "cookie-parser";
+import { setLastVisit } from "./src/middleware/lastVisit.middleware.js";
 
 const app = express();
 
 //Static server file from the src/views directory
 app.use(express.static(path.join(path.resolve(), "src", "views")));
 app.use(express.static(path.join(path.resolve(), "public")));
+app.use(cookieParser());
+app.use(setLastVisit);
 app.use(
   session({
     secret: "SecretKey",
