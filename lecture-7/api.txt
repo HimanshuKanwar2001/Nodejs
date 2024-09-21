@@ -1,0 +1,42 @@
+    API(Application Programming Interface)
+
+
+Loose-Coupling
+
+
+API--------->Data--------------------->Devices(mobile,desktop,tablet,television);
+controller(server(backend))-------------->  views(client(Front-end))
+
+                Types of APIs
+SOAP-Simple Object Access Protocol(Old Method)-ITS A HEAVY,SLOW and complex
+
+
+{REST:API:  } -light weight ,fast
+
+GraphQL : -newest technology
+
+
+        RESTful API
+-Representational State Transfer
+    File/Databse->server->data(JSON/XML)->client        
+Stateless Architecture
+Architectural guideline
+Propularly used across different types of systems
+
+        Benefits REST API
+-simplicity 
+-Highly Scalable 
+-Interoperability(api can use in mobile ,phone ,desktop application etc)
+-Great support for Caching
+
+REST Methods            request contains(URL,Headers,Data,methods)
+GET-Get a resource
+POST-Create a resource
+PUT-Update a resource
+DELETE-Delete a resource
+
+
+        Applications of REST API
+-Third Party Intergration
+-BackEnd APIs
+-MicroServices (clients->API GATEWAy->admin Service , user Services)
