@@ -1,0 +1,6 @@
+        Sessions
+-mechanism that connects client with server 
+-clinet and servers 
+-http is a stateless protocol
+-means one request is independent to others
+
