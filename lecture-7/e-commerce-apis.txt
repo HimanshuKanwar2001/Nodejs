@@ -1,0 +1,20 @@
+        E-Commerce APIs
+1.Product Management        
+-Add Products
+-Get Products
+-Filter Products
+-Rate Product
+
+2.User Management
+-Sign Up
+-Sing In
+
+3.Cart Management
+-Add to Cart
+-Remove from Cart
+-Get cart Items
+
+4.Order Management
+-Place Order
+-Update Status
+-Get Status 
