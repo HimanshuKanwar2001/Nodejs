@@ -2,10 +2,13 @@
 //1.Import Express
 import express from "express";
 import  ProductRouter from "./src/features/product/product.routes.js";
+import bodyParser from "body-parser";
 
 //2.Create Server
 const app=express();
 
+
+app.use(bodyParser.json());
 
 //for all requests related to product,redirect to product routes
 //localhost:3200/api/products
