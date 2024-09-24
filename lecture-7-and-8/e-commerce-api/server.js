@@ -4,7 +4,7 @@ import ProductRouter from "./src/features/product/product.routes.js";
 import UserRouter from "./src/features/user/user.routes.js";
 import bodyParser from "body-parser";
 import path from 'path';
-import basicAuthorizer from "./src/middleware/basicAuth.middleware.js";
+import jwtAuth from "./src/middleware/jwt.middleware.js";
 
 //2.Create Server
 const app = express();
@@ -15,7 +15,7 @@ app.use(bodyParser.json()); //   or     app.use(express.json());
 
 //for all requests related to product,redirect to product routes
 //localhost:3200/api/products
-app.use("/api/products",basicAuthorizer, ProductRouter);
+app.use("/api/products",jwtAuth, ProductRouter);
 app.use("/api/users",UserRouter);
 
 //3.Default requrest handler
