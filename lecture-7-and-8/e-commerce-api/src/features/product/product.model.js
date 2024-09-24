@@ -1,4 +1,4 @@
-export  class ProductModel {
+export default class ProductModel {
   constructor(id, name, desc, price, imageUrl, category, sizes) {
     this.id = id;
     this.name = name;

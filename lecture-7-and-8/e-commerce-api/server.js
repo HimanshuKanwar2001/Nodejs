@@ -10,12 +10,12 @@ const app = express();
 
 
 app.use(express.static(path.join(path.resolve(),"public")));
-app.use(bodyParser.json());
+app.use(bodyParser.json()); //   or     app.use(express.json()); 
 
 //for all requests related to product,redirect to product routes
 //localhost:3200/api/products
 app.use("/api/products", ProductRouter);
-app.use("/api/user",UserRouter);
+app.use("/api/users",UserRouter);
 
 //3.Default requrest handler
 app.get("/", (req, res) => {
