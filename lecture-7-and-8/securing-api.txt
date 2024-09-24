@@ -30,3 +30,27 @@
 
         4.JWT
         -Creates a resuable token with option to refresh.
+
+
+
+        Problems with Basic Authentication
+        -No encryption,hence not very secure.(it is encoded);
+        -Client needs to store credentials,which can be exposed
+        -Easy to crack using Brute-Force attacks.
+
+
+        JSon WEb token
+        -Encrypted token
+        -Stateless
+        -Easy to Scale
+        -Can be used by Mobile and Web both
+
+        Structure
+        -Header.Payload.Signature
+
+
+        client                                          Server
+                    1.Login with credentials----->          2.creates a JWT token
+            <-------3.sends token to client
+                    4.Sendws token in Authorization header--->  5.verfiy JWT token,access client info
+            <-------6.Send response to client                    
