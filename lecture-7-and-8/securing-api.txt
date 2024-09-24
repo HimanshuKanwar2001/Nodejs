@@ -1,0 +1,32 @@
+        Securing Application
+
+        why do we secure app ?                  -How do we secure apps?
+        -for controlled access                  -Verify who user is
+        -Data Privacy                           -Verify what users can access
+
+
+        Authentication
+        -Verifying user's Indentity.
+        -COnfirms that a user is who they claim to be.
+        -Examples include verify credentials tokens
+
+        Authorization
+        -Granting or denying access to specific resources based on user's privileges
+        -Controls access to resources based on the user's privileges.
+        -Examples include checking if the authenticated user has the permissions o access a resource.
+
+
+
+        Types of Authentication
+
+        1.Basic Authentication
+        -Requeries user's credentials on each request .
+
+        2.API Keys
+        -API Keys are provided by signing up users on developer portals.
+
+        3.OAuth
+        -Third-part app integration
+
+        4.JWT
+        -Creates a resuable token with option to refresh.

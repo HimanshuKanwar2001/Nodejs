@@ -1,6 +1,0 @@
-    Products Controller
-Get Products
-Add a Products
-Get one Products
-Rate product
-Filter Products
