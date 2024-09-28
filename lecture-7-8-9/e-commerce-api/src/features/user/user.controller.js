@@ -15,7 +15,7 @@ export default class userController{
                 return res.status(400).send("Incorrect Credentails");
             }
             else{
-                //1.Create Token
+                //1.Create Token ijodghfiusdfusid.jklsadfhjasodhfjls.ojisdhfojshf
                 const token=jwt.sign({userID:result.id,email:result.email},"44Rn4WEv4P2BKwNjDoKbGBFIXQWgAwBn",{
                     expiresIn:"1h",
                 })

@@ -45,7 +45,7 @@ export default class ProductModel {
       return "user not found";
     }
     // Validate Porduct
-    const product = product.find((p) => p.id == productID);
+    const product = products.find((p) => p.id == productID);
     if (!product) {
       return "Product not found";
     }
