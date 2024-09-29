@@ -16,7 +16,7 @@ productRouter.post("/rate", productController.rateProduct);
 // localhost:3200/api/products/filter?minPrice=10&maxPrice=20&category=Category1
 productRouter.get("/filter", productController.filterProducts);
 
-//localhost/api/products
+//localhos:3200/api/products
 productRouter.get("/", productController.getAllProducts);
 productRouter.post(
   "/",

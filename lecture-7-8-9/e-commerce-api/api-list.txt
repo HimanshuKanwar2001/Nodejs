@@ -3,10 +3,10 @@ Get Products-Done
 Add a Products-Done
 Get one Products-Done
 Filter Products-Done
-Rate product
-Add items to Cart
-Get items of Cart
-Remove items from cart.
+Rate product-Done
+Add items to Cart-Done
+Get items of Cart-Done
+Remove items from cart.-Done
 
 
 

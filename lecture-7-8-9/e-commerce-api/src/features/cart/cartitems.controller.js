@@ -14,4 +14,25 @@ export default class CartItemController{
         }
 
     }
+    get(req,res){
+        const userId=req.userID;
+        const result=CartItemModel.get(userId);
+        if(!result){
+           return res.status(404).send(result);
+        }
+        else{
+            return res.status(200).send(result);
+        }
+    }
+    delete(req,res){
+        const userID=req.userID;
+        const cartItemID=req.params.id;
+        const error=CartItemModel.delete(cartItemID,userID);
+        if(error){
+            return res.status(404).send(error);
+        }else{
+            return res.status(200).send("Cart Item is removed")
+        }
+
+    }
 }

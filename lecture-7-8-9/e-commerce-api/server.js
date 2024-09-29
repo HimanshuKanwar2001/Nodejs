@@ -17,7 +17,7 @@ app.use(bodyParser.json()); //   or     app.use(express.json());
 //for all requests related to product,redirect to product routes
 //localhost:3200/api/products
 app.use("/api/products",jwtAuth, ProductRouter);
-app.use("/api/cart",jwtAuth,cartRouter);
+app.use("/api/cartItems",jwtAuth,cartRouter);
 app.use("/api/users",UserRouter);
 
 //3.Default requrest handler

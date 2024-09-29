@@ -17,7 +17,7 @@ if(!token){
 // 3.check if token is valid.
 try{
     const payload=jwt.verify(token,"44Rn4WEv4P2BKwNjDoKbGBFIXQWgAwBn");
-    console.log("Payload",payload);
+    // console.log("Payload",payload);
     req.userID=payload.userID;
 }catch(error){
     // 4.return error
