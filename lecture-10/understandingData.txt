@@ -1,0 +1,12 @@
+UnderStanding Data
+what is data?
+why it is important
+How to manage it ?
+
+
+
+application     ---------------- Data Items(user,carts,Products,orders)
+
+
+
+UnderStanding Database

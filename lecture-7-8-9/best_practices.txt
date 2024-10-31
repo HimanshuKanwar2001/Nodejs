@@ -1,0 +1,8 @@
+REST API Best Practices
+
+using correct Status Codes
+Error Handling
+Input Validation
+Using correct request methods
+Secured ApIs 
+Use naming conventions for URL
