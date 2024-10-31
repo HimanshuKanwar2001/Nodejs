@@ -8,33 +8,37 @@ export default class ProductController {
 
   addProduct(req, res) {
     console.log(req.body);
-    const { name, price, sizes,desc,category } = req.body;
+    const { name, price, sizes, desc, category } = req.body;
     const imageUrl = req.file.filename;
     const newProduct = {
       name: name,
-      desc:desc,
+      desc: desc,
       price: parseFloat(price),
       imageUrl: imageUrl,
-      category:category,
+      category: category,
       sizes: sizes.split(","),
     };
     const createdRecord = ProductModel.add(newProduct);
     return res.status(201).send(createdRecord);
   }
 
-  rateProduct(req, res) {
-    console.log(req.query)
-    const userID=req.query.userID;
-    const productID=req.query.productID;
-    const rating=req.query.rating;
-    const error=ProductModel.rateProduct(userID,productID,rating);
-    console.log(error);
-    if(error){
-      return res.status(400).send(error);
-      } else{
-        res.status(200).send("Rating has been added");
+  rateProduct(req, res, next) {
+    console.log(req.query);
+    try {
+      const userID = req.query.userID;
+      const productID = req.query.productID;
+      const rating = req.query.rating;
+      try {
+        ProductModel.rateProduct(userID, productID, rating);
+      } catch (error) {
+        return res.status(400).send(error.message);
       }
 
+      return res.status(200).send("Rating has been added");
+    } catch (err) {
+      console.log("Passing error to middleware");
+      next(err);
+    }
   }
 
   getOneProduct(req, res) {

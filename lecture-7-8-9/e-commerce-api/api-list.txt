@@ -14,3 +14,18 @@ UserController
 SignUp-Email,Name,Password,TypeOfUser(customer,seller)-Done.
 SignIn-(Email,Password)-Done.
 
+
+
+
+folder Structure
+Route configuration
+Creating APIs
+Different API Methods
+Middlewares
+Route parameters
+Query parametersTesting api using postman
+Securing Api using jwt token
+Documenting API using swagger
+CORS
+Logging
+Error Handling

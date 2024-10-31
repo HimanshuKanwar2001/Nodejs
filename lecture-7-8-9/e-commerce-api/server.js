@@ -1,7 +1,7 @@
 //1.Import Express
 import express from "express";
 import swagger from "swagger-ui-express";
-import cors from "cors"
+import cors from "cors";
 
 import ProductRouter from "./src/features/product/product.routes.js";
 import UserRouter from "./src/features/user/user.routes.js";
@@ -11,23 +11,24 @@ import jwtAuth from "./src/middleware/jwt.middleware.js";
 import cartRouter from "./src/features/cart/cartitems.routes.js";
 import apiDoc from "./swagger.json" assert { type: "json" };
 import loggerMiddleware from "./src/middleware/logger.middleware.js";
+import { logger } from "./src/middleware/logger.middleware.js";
+import { ApplicationError } from "./src/error-handler/applicationError.js";
 
 //2.Create Server
 const app = express();
 
 // //CORS policy configuration
 
-let corsOptions={
-  origin:"http://127.0.0.1:5500",
-  allowHeaders:"*"
-
-}
+let corsOptions = {
+  origin: "http://127.0.0.1:5500",
+  allowHeaders: "*",
+};
 
 app.use(cors(corsOptions));
 
 // app.use((req,res,next)=>{
 //   res.header("Access-Control-Allow-Origin","http://127.0.0.1:5500")
-  
+
 //   res.header("Access-Control-Allow-Headers","*")
 //   res.header("Access-Control-Allow-Methods","*")
 //   //return ok for preflight request.
@@ -43,7 +44,7 @@ app.use(bodyParser.json()); //   or     app.use(express.json());
 //Bearer <token>
 //for all requests related to product,redirect to product routes
 //localhost:3200/api/products
-app.use(loggerMiddleware)
+app.use(loggerMiddleware);
 
 app.use("/api-docs", swagger.serve, swagger.setup(apiDoc));
 
@@ -56,9 +57,24 @@ app.get("/", (req, res) => {
   return res.send("Welcome to Ecommerce api");
 });
 
+//Error handler middleware
+app.use((err, req, res, next) => {
+  console.log(err);
+
+  if (err instanceof ApplicationError) {
+    res.status(err.code).send(err.message);
+  }
+  // server errors
+  res.status(500).send("Something went wrong ,please try later");
+});
+
 //4.Middleware to handle 404 requests.
 app.use((req, res) => {
-  res.status(404).send("API not found.Please check our documentation for more information at localhost:3200/api-docs");
+  res
+    .status(404)
+    .send(
+      "API not found.Please check our documentation for more information at localhost:3200/api-docs"
+    );
 });
 
 // /api/users
