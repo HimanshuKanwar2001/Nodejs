@@ -11,8 +11,9 @@ import jwtAuth from "./src/middleware/jwt.middleware.js";
 import cartRouter from "./src/features/cart/cartitems.routes.js";
 import apiDoc from "./swagger.json" assert { type: "json" };
 import loggerMiddleware from "./src/middleware/logger.middleware.js";
-import { logger } from "./src/middleware/logger.middleware.js";
+// import { logger } from "./src/middleware/logger.middleware.js";
 import { ApplicationError } from "./src/error-handler/applicationError.js";
+import {connectToMongoDB} from "./src/config/mongodb.js";
 
 //2.Create Server
 const app = express();
@@ -85,6 +86,7 @@ app.listen(3200, (err) => {
   if (err) {
     console.log("Error", err);
   } else {
+    connectToMongoDB();
     console.log("Server is running on port 3200");
   }
 });

@@ -1,0 +1,12 @@
+{"level":"info","message":"/api/products - {}","service":"request-logging"}
+{"level":"info","message":"/api/products - {}","service":"request-logging"}
+{"level":"info","message":"/ - {}","service":"request-logging"}
+{"level":"info","message":"/favicon.ico - {}","service":"request-logging"}
+{"level":"info","message":"/ - {}","service":"request-logging"}
+{"level":"info","message":"/ - {}","service":"request-logging"}
+{"level":"info","message":"/ - {}","service":"request-logging"}
+{"level":"info","message":"/ - {}","service":"request-logging"}
+{"level":"info","message":"/ - {}","service":"request-logging"}
+{"level":"info","message":"/ - {}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"Hero\",\"email\":\"seller1@ecom.com\",\"password\":\"Password1\",\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"/api/users/signup - {\"name\":\"Hero\",\"email\":\"seller1@ecom.com\",\"password\":\"Password1\",\"type\":\"seller\"}","service":"request-logging"}
