@@ -10,3 +10,93 @@ application     ---------------- Data Items(user,carts,Products,orders)
 
 
 UnderStanding Database
+-What is Database?
+-how does it work?
+-popular type 
+
+
+
+types of Databses
+Relational Databses(Famouse)
+Object-oriented Databses
+NoSQL Databses(Famouse)
+Hierarchical Databses
+
+
+
+
+Relation Databses
+-store in form of Table format
+-row and columns
+-relating two tables using primary key(mostly Ids)
+-Primary key and Foreign key(belong to other tables)
+
+
+NoSQL Databses
+-Schemaless
+-Flexible Structure
+
+
+
+Relation vs NoSQL Databses
+-Has Strict Schema/structure        |      -Schemaless
+-Row-column format                   |      - Json format
+-Predictable Data                    |       -Difficult to predict data
+-Performace issues while reaing with |       -Better at reading from large data set
+large set of data and relationship  |       as it supports completx nested structure   
+-MySQL,Postgres,SQL Server           |      - MongoDB,DynamicDB,CouchDB
+
+
+
+NoSQL Databsestables-collection
+Row-Document
+Column-Attribute
+
+
+
+Documents CRUD in MongoDB-1
+
+-show dbs    
+
+create collection
+use bookdb
+
+inserting single document in collection
+db.books.insetOne({"name":"Jon Doe","age":23});
+
+
+
+interting many document in collection
+db.books.insetMany([{"name":"Bhaubali","age":21},{"name":"Harry Potter","age":26}])
+
+
+find all the books 
+db.books.find();
+
+
+find one book based on a condition
+db.books.findOne({name:"Jon Doe"})
+
+all the books based on condition
+db.books.find({age:"21"});
+
+
+
+
+Documents CRUD in MONGODB-2
+
+db.collection.updateOne()
+db.collection.updateMany()
+db.collection.repalceOne()
+
+
+
+
+db.collection.updateOne({name:"Jon Doe},  {$set:{age:36}})
+db.books.updateMany({name:"Himanshu"},{$set:{age:20}})
+
+db.books.deleteOne({title:"To Kill a mocking bird"})
+db.books.deleteMany({age:20})
+
+
+
