@@ -100,3 +100,7 @@ db.books.deleteMany({age:20})
 
 
 
+Repository Pattern
+Models,Database Access                                                                Models
+                            -------------------------------------------------------   Repository
+Controllers                                                                           Controllers
