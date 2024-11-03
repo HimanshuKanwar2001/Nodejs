@@ -1,5 +1,8 @@
 //1.Import Express
 import express from "express";
+import dotenv from "dotenv";
+//load all the environment variables in application
+dotenv.config();
 import swagger from "swagger-ui-express";
 import cors from "cors";
 
@@ -13,7 +16,7 @@ import apiDoc from "./swagger.json" assert { type: "json" };
 import loggerMiddleware from "./src/middleware/logger.middleware.js";
 // import { logger } from "./src/middleware/logger.middleware.js";
 import { ApplicationError } from "./src/error-handler/applicationError.js";
-import {connectToMongoDB} from "./src/config/mongodb.js";
+import { connectToMongoDB } from "./src/config/mongodb.js";
 
 //2.Create Server
 const app = express();
