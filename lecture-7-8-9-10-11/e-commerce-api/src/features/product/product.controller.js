@@ -1,25 +1,42 @@
 import ProductModel from "./product.model.js";
+import ProductRepository from "./product.repository.js";
 
 export default class ProductController {
-  getAllProducts(req, res) {
-    const products = ProductModel.getAll();
-    res.status(200).send(products);
+  constructor() {
+    this.productRepository = new ProductRepository();
+  }
+  async getAllProducts(req, res) {
+    try {
+      const products = await this.productRepository.getAll();
+      console.log(products);
+      res.status(200).send(products);
+    } catch (err) {
+      console.log(err);
+      return res
+        .status(401)
+        .send("Something went wrong while getting all the products");
+    }
   }
 
-  addProduct(req, res) {
-    console.log(req.body);
-    const { name, price, sizes, desc, category } = req.body;
-    const imageUrl = req.file.filename;
-    const newProduct = {
-      name: name,
-      desc: desc,
-      price: parseFloat(price),
-      imageUrl: imageUrl,
-      category: category,
-      sizes: sizes.split(","),
-    };
-    const createdRecord = ProductModel.add(newProduct);
-    return res.status(201).send(createdRecord);
+  async addProduct(req, res) {
+    try {
+      console.log(req.body);
+      const { name, price, sizes, desc, category } = req.body;
+      const imageUrl = req.file.filename;
+      const newProduct = new ProductModel(
+        name,
+        desc,
+        parseFloat(price),
+        imageUrl,
+        category,
+        sizes.split(",")
+      );
+      const createdRecord = await this.productRepository.add(newProduct);
+      return res.status(201).send(createdRecord);
+    } catch (err) {
+      console.log(err);
+      return res.status(401).send("Something went wrong while adding Product");
+    }
   }
 
   rateProduct(req, res, next) {
@@ -41,13 +58,20 @@ export default class ProductController {
     }
   }
 
-  getOneProduct(req, res) {
-    const id = req.params.id;
-    const product = ProductModel.get(id);
-    if (!product) {
-      return res.status(404).send("Product not found");
+  async getOneProduct(req, res) {
+    try {
+      const id = req.params.id;
+      const product = await this.productRepository.get(id);
+      if (!product) {
+        return res.status(404).send("Product not found");
+      }
+      return res.status(200).send(product);
+    } catch (err) {
+      console.log(err);
+      return res
+        .status(401)
+        .send("Something went wrong while finding the product!");
     }
-    return res.status(200).send(product);
   }
 
   filterProducts(req, res) {

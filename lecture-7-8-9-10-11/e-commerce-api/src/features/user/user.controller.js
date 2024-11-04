@@ -19,7 +19,8 @@ export default class userController {
       delete user.password;
       res.status(201).send(user);
     } catch (err) {
-      throw new ApplicationError("SignUp Failed", 500);
+      console.log(err);
+      return res.status(500).send("SignUp Failed");
     }
   }
 

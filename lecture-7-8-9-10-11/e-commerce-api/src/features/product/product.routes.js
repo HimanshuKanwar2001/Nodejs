@@ -17,12 +17,14 @@ productRouter.post("/rate", productController.rateProduct);
 productRouter.get("/filter", productController.filterProducts);
 
 //localhos:3200/api/products
-productRouter.get("/", productController.getAllProducts);
-productRouter.post(
-  "/",
-  uploadFile.single("imageUrl"),
-  productController.addProduct
-);
-productRouter.get("/:id", productController.getOneProduct);
+productRouter.get("/", (req, res) => {
+  productController.getAllProducts(req, res);
+});
+productRouter.post("/", uploadFile.single("imageUrl"), (req, res) => {
+  productController.addProduct(req, res);
+});
+productRouter.get("/:id", (req, res) => {
+  productController.getOneProduct(req, res);
+});
 
 export default productRouter;

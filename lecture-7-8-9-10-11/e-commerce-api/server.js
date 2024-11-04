@@ -6,13 +6,19 @@ dotenv.config();
 import swagger from "swagger-ui-express";
 import cors from "cors";
 
+import { assert } from "console";
 import ProductRouter from "./src/features/product/product.routes.js";
 import UserRouter from "./src/features/user/user.routes.js";
 import bodyParser from "body-parser";
 import path from "path";
 import jwtAuth from "./src/middleware/jwt.middleware.js";
 import cartRouter from "./src/features/cart/cartitems.routes.js";
-import apiDoc from "./swagger.json" assert { type: "json" };
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const apiDoc = require('./swagger.json');
+
+
+
 import loggerMiddleware from "./src/middleware/logger.middleware.js";
 // import { logger } from "./src/middleware/logger.middleware.js";
 import { ApplicationError } from "./src/error-handler/applicationError.js";

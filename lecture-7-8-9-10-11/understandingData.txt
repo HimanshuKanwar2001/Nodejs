@@ -62,12 +62,12 @@ create collection
 use bookdb
 
 inserting single document in collection
-db.books.insetOne({"name":"Jon Doe","age":23});
+db.books.insertOne({"name":"Jon Doe","age":23});
 
 
 
 interting many document in collection
-db.books.insetMany([{"name":"Bhaubali","age":21},{"name":"Harry Potter","age":26}])
+db.books.insertMany([{"name":"Bhaubali","age":21},{"name":"Harry Potter","age":26}])
 
 
 find all the books 

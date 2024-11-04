@@ -2,25 +2,25 @@ import { ApplicationError } from "../../error-handler/applicationError.js";
 import Usermodel from "../user/user.model.js";
 
 export default class ProductModel {
-  constructor(id, name, desc, price, imageUrl, category, sizes) {
-    this.id = id;
+  constructor(name, desc, price, imageUrl, category, sizes, id) {
     this.name = name;
     this.desc = desc;
     this.price = price;
     this.imageUrl = imageUrl;
     this.category = category;
     this.sizes = sizes;
+    this._id = id;
   }
 
-  static getAll() {
-    return products;
-  }
+  // static getAll() {
+  //   return products;
+  // }
 
-  static get(id) {
-    const product = products.find((product) => product.id == id);
+  // static get(id) {
+  //   const product = products.find((product) => product.id == id);
 
-    return product;
-  }
+  //   return product;
+  // }
   static filter(minPrice, maxPrice, category) {
     console.log(maxPrice, minPrice);
     const newProducts = products.filter((p) => {
@@ -33,11 +33,11 @@ export default class ProductModel {
     return newProducts;
   }
 
-  static add(newproduct) {
-    newproduct.id = products.length + 1;
-    products.push(newproduct);
-    return products;
-  }
+  // static add(newproduct) {
+  //   newproduct.id = products.length + 1;
+  //   products.push(newproduct);
+  //   return products;
+  // }
 
   static rateProduct(userID, productID, rating) {
     // 1.Validate user and product.
